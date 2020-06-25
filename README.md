@@ -58,7 +58,7 @@ $ vagrant up
 
 If guest machine setup is successful, a welcome message should be seen in the console:
 
-![vagrant-up-result](img/ep-vagrant-created.png)
+![vagrant-up-result](img/ep-vagrant-created.PNG)
 
 
 ### Entering the box's terminal
