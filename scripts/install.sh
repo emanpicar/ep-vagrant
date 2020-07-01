@@ -79,6 +79,20 @@ function install_python_and_pip {
     pip3 install virtualenv
 }
 
+function install_k8s_and_snapd {
+    yum -y install epel-release
+    yum -y install snapd
+
+    systemctl enable --now snapd.socket
+    ln -s /var/lib/snapd/snap /snap
+
+    snap wait system seed.loaded
+    snap install microk8s --classic --channel=1.17/stable
+    /snap/bin/microk8s.status --wait-ready
+
+    add_to_path_via_bashrc /snap/bin
+}
+
 # Utility methods
 function add_to_path_via_bashrc {
     dir=$1
@@ -127,6 +141,7 @@ install_maven
 install_node
 install_golang
 install_python_and_pip
+install_k8s_and_snapd
 
 sync_bashrcs
 

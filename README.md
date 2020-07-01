@@ -1,6 +1,6 @@
 # ep-vagrant
 
-💻 Personal vagrant development environment of Eman Picar but everyone is welcome to use this as referrence for setting up your very own environment!
+💻 Personal vagrant development environment of Eman Picar but everyone is welcome to use this as referrence for setting up their very own environment!
 
 ## Vagrant development box setup
 
@@ -36,7 +36,7 @@ Before proceeding, the following software should be installed on your host machi
 
     ```bash
     30 # Synced folders
-    31 # mount Projects directory (absolte path)
+    31 # mount Projects directory (absolute path)
     32 ep_vm.vm.synced_folder "C:\Users\<your_username>\workspace\Projects", "/usr/local/src/projects", type: "virtualbox" 
     ```
 
@@ -114,6 +114,7 @@ Make sure that `scripts/install.sh` is executed completely. All necessary packag
  - [NodeJS](https://nodejs.org/en/)
  - [Golang 1.14](https://golang.org/)
  - [Python](https://www.python.org/)
+ - [Microk8s 1.17/stable](https://microk8s.io/)
  - and other linux helper tools
 
 

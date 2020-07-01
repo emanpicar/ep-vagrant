@@ -1,4 +1,5 @@
 alias gowd="cd /usr/local/src/projects"
+alias kubectl="microk8s.kubectl"
 
 # Delete all untagged <none> Docker images
 case $OSTYPE in

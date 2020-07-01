@@ -25,7 +25,8 @@ Vagrant.configure("2") do |config|
 
     # Network
     ep_vm.vm.network "private_network", ip: "10.1.9.164" #PRO TIP: If you are in VPN network, private_network will not work. Comment out this line and use "localhost" to access the containers
-    # ep_vm.vm.network "forwarded_port", guest: 443, host: 443
+    # ep_vm.vm.network "forwarded_port", guest: 9988, host: 9988
+    # ep_vm.vm.network "forwarded_port", guest: 8080, host: 8080
 
     # Synced folders
     # mount Projects directory (absolte path)
