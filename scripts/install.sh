@@ -60,13 +60,14 @@ function install_maven {
 }
 
 function install_node {
-    curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
+    curl -fsSL https://rpm.nodesource.com/setup_16.x | sudo bash -
     yum install -y nodejs
 }
 
 function install_golang {
-    wget https://dl.google.com/go/go1.14.linux-amd64.tar.gz
-    tar -C /usr/local -xzf go1.14.linux-amd64.tar.gz
+    GO_VERSION=go1.16.3.linux-amd64.tar.gz
+    wget https://golang.org/dl/$GO_VERSION
+    tar -C /usr/local -xzf $GO_VERSION
 
     add_to_path_via_bashrc /usr/local/go/bin
     add_envar_via_bashrc GOPATH /usr/local/src/projects/GoWorkspace

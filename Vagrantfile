@@ -8,7 +8,8 @@
 Vagrant.configure("2") do |config|
   config.vm.define "ep_vm" do |ep_vm|
 
-    ep_vm.vm.box = "centos/7"
+    ep_vm.vm.box = "centos/8"
+    ep_vm.vbguest.installer_options = { allow_kernel_upgrade: true }
     
     ep_vm.vm.provider "virtualbox" do |vb|
       vb.memory = 2048
@@ -30,6 +31,6 @@ Vagrant.configure("2") do |config|
 
     # Synced folders
     # mount Projects directory (absolte path)
-    ep_vm.vm.synced_folder "D:\\Projects", "/usr/local/src/projects", type: "virtualbox"
+    ep_vm.vm.synced_folder "C:\\Users\\Finn\\Documents\\workspace\\Projects", "/usr/local/src/projects", type: "virtualbox"
   end
 end
