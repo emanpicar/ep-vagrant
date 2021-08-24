@@ -94,6 +94,14 @@ function install_k8s_and_snapd {
     add_to_path_via_bashrc /snap/bin
 }
 
+function install_aws_cli {
+    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+    unzip awscliv2.zip
+    sudo ./aws/install
+
+    add_to_path_via_bashrc /usr/local/bin/aws
+}
+
 # Utility methods
 function add_to_path_via_bashrc {
     dir=$1
@@ -143,6 +151,7 @@ install_node
 install_golang
 install_python_and_pip
 install_k8s_and_snapd
+install_aws_cli
 
 sync_bashrcs
 
